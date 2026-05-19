@@ -1,7 +1,77 @@
-"# Enactus-Sherkhan" 
-"# Enactus-Sherkhan" 
-"# Enactus-Sherkhan" 
-"# Enactus-Sherkhan" 
-"# Enactus-Sherkhan" 
-"# Enactus-Sherkhan" 
-"# Enactus-Sherkhan" 
+# 🌟 Enactus Sherkhan — Меняем мир через предпринимательство
+
+<div align="center">
+  <img src="images/logo.png" alt="Enactus Sherkhan Logo" width="150" style="border-radius: 20px; margin-bottom: 20px;" />
+  <p><strong>Студенческая команда Международного Таразского университета имени Шерхана Муртазы</strong></p>
+
+  [![Website Status](https://img.shields.io/website?up_message=online&url=https%3A%2F%2Fgithub.com%2FShaikh21bb%2FEnactus-Sherkhan)](https://github.com/Shaikh21bb/Enactus-Sherkhan)
+  [![Language](https://img.shields.io/badge/Language-HTML%20%2F%20CSS%20%2F%20JS-blue.svg)](index.html)
+  [![Localizations](https://img.shields.io/badge/Localizations-RU%20%7C%20KZ-gold.svg)](index.html)
+  [![Enactus Network](https://img.shields.io/badge/Enactus-Global%20Network-orange.svg)](https://enactus.org)
+</div>
+
+---
+
+## 📖 О проекте
+
+**Enactus Sherkhan** — это официальный сайт студенческого предпринимательского сообщества при Международном Таразском университете имени Шерхана Муртазы в Таразе, Казахстан. 
+
+Enactus объединяет студентов, преподавателей и представителей бизнеса, направляя их энергию на создание социально-предпринимательских проектов, решающих экологические, социальные и экономические проблемы общества.
+
+---
+
+## ✨ Ключевые возможности сайта
+
+*   **Premium Дизайн**: Современный, темный интерфейс с элементами Glassmorphic дизайна, неоновыми свечениями и плавными переходами.
+*   **Полная Локализация (RU / KZ)**: Мгновенное переключение языка без перезагрузки страницы.
+*   **Динамические интерактивные счетчики**: Визуализация статистики достижений команды с плавным нарастанием цифр.
+*   **Адаптивная верстка**: Идеальное отображение на смартфонах, планшетах и мониторах высокой четкости.
+*   **Форма обратной связи**: Интерактивная форма подачи заявок для вступления в команду с возможностью прямой связи по WhatsApp.
+
+---
+
+## 🚀 Наши проекты
+
+### 1. 🌱 EcoHums (#Экология)
+Инновационный экологический проект, направленный на переработку органических биоотходов с использованием калифорнийских червей для получения высокоэффективного органического удобрения — **Биогумуса**.
+
+### 2. 📈 Damu (#Бизнес)
+Образовательная платформа и тренинги для старшеклассников, обучающие финансовой грамотности, командной работе и основам ведения бизнеса с юного возраста.
+
+### 3. 🤖 Urpaq.ai (#Технологии)
+Цифровая AI-платформа для учителей средних школ, автоматизирующая рутинную проверку домашних заданий, генерацию учебных планов и облегчающая подготовку к урокам.
+
+---
+
+## 👥 Наша команда
+
+| Фото | Имя | Роль |
+| :---: | :--- | :--- |
+| <img src="images/team-kamilla.jpg" width="60" style="border-radius:50%;" /> | **Камилла Р.** | Капитан команды Enactus Sherkhan |
+| <img src="images/team-aruzhan.jpg" width="60" style="border-radius:50%;" /> | **Аружан Т.** | Вице-капитан команды |
+| <img src="images/team-ayazhan.jpg" width="60" style="border-radius:50%;" /> | **Аяжан Б.** | Вице-капитан команды |
+| <img src="images/team-madina.jpg" width="60" style="border-radius:50%;" /> | **Мадина А.** | Руководитель PR-отдела |
+
+---
+
+## 🛠️ Запуск проекта локально
+
+Проект создан на базе чистых веб-технологий (HTML5, Vanilla CSS3, Modern JS) и не требует сборки.
+
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/Shaikh21bb/Enactus-Sherkhan.git
+   ```
+2. Откройте папку проекта:
+   ```bash
+   cd Enactus-Sherkhan
+   ```
+3. Откройте файл `index.html` в любом современном браузере или запустите через Live Server в VS Code.
+
+---
+
+## 🌐 Контакты и ресурсы
+
+*   **Официальный сайт Enactus Казахстан**: [enactus.kz](https://enactus.kz)
+*   **Instagram команды**: [@sherkhan.ens](https://www.instagram.com/sherkhan.ens/)
+*   **Локация**: г. Тараз, Республика Казахстан
