@@ -1543,6 +1543,10 @@
                     el.placeholder = translations[lang][key];
                 }
             });
+            
+            if (typeof updateTypewriterWords === 'function') {
+                updateTypewriterWords(lang);
+            }
         }
 
         langToggle.addEventListener('click', () => {
@@ -1573,11 +1577,27 @@
         });
 
         // 4. Typewriter Effect
-        const words = ['предпринимательство', 'кәсіпкерлік', 'entrepreneurship'];
+        const typewriterWords = {
+            ru: ['предпринимательство', 'инновации', 'социальные проекты'],
+            kz: ['кәсіпкерлік', 'инновациялар', 'әлеуметтік жобалар']
+        };
+        
+        let words = typewriterWords['ru'];
         let wordIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
+        let typeTimeout;
         const typewriterEl = document.getElementById('typewriter');
+
+        function updateTypewriterWords(lang) {
+            words = typewriterWords[lang] || typewriterWords['ru'];
+            wordIndex = 0;
+            charIndex = 0;
+            isDeleting = false;
+            typewriterEl.textContent = '';
+            clearTimeout(typeTimeout);
+            type();
+        }
 
         function type() {
             const currentWord = words[wordIndex];
@@ -1601,10 +1621,10 @@
                 typeSpeed = 500;
             }
 
-            setTimeout(type, typeSpeed);
+            typeTimeout = setTimeout(type, typeSpeed);
         }
 
-        setTimeout(type, 1000);
+        typeTimeout = setTimeout(type, 1000);
 
         // 5. Scroll Reveal
         const revealElements = document.querySelectorAll('.reveal');
