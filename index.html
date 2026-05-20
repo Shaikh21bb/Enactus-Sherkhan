@@ -246,18 +246,7 @@
             }
         }
 
-        /* Scroll Reveal Animation */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        /* Scroll Reveal Animation handled by GSAP */
         /* 1. Navbar */
         .navbar {
             position: fixed;
@@ -1661,27 +1650,7 @@
 
         typeTimeout = setTimeout(type, 1000);
 
-        // 5. Scroll Reveal
-        const revealElements = document.querySelectorAll('.reveal');
-
-        const revealOptions = {
-            threshold: 0.15,
-            rootMargin: "0px 0px -50px 0px"
-        };
-
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, revealOptions);
-
-        revealElements.forEach(el => {
-            revealObserver.observe(el);
-        });
-
+        // 5. Scroll Reveal is now handled by GSAP ScrollTrigger
         // 6. Animated Counters
         const counters = document.querySelectorAll('.counter');
         let hasCounted = false;
@@ -1809,19 +1778,22 @@
             }
         });
 
-        // Glass cards stagger reveal
-        gsap.utils.toArray('.glass-card').forEach(card => {
-            gsap.from(card, {
-                y: 50,
-                opacity: 0,
-                duration: 1,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: card,
-                    start: "top 85%",
-                    toggleActions: "play none none reverse"
+        // Premium Reveal for all sections and cards
+        gsap.utils.toArray('.reveal').forEach((element, i) => {
+            gsap.fromTo(element, 
+                { y: 50, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 85%",
+                        toggleActions: "play none none reverse"
+                    }
                 }
-            });
+            );
         });
     </script>
 </body>
