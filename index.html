@@ -1329,20 +1329,20 @@
                 </div>
 
                 <div class="glass-card reveal" style="transition-delay: 0.2s">
-                    <form class="join-form" onsubmit="event.preventDefault(); alert('Отправлено / Жіберілді!');">
+                    <form id="joinForm" class="join-form">
                         <div class="form-group">
-                            <input type="text" class="form-control" data-placeholder="form_name" placeholder="Ваше Имя"
+                            <input type="text" name="name" class="form-control" data-placeholder="form_name" placeholder="Ваше Имя"
                                 required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" class="form-control" data-placeholder="form_phone"
+                            <input type="tel" name="phone" class="form-control" data-placeholder="form_phone"
                                 placeholder="Номер телефона (WhatsApp)" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" data-placeholder="form_faculty"
+                            <input type="text" name="faculty" class="form-control" data-placeholder="form_faculty"
                                 placeholder="Факультет / Специальность" required>
                         </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="btn_submit">Подать
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="width: 100%;" data-i18n="btn_submit">Подать
                             заявку</button>
                     </form>
                     <div style="margin-top: 32px; text-align: center;">
@@ -1795,6 +1795,38 @@
                 }
             );
         });
+    </script>
+
+    <!-- Google Sheets Form Submission -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzNlZnsgy3mMggGPQHzzAF9fVJ9LyzWlp4heBapJuHQ4HUjY1jRt97LmGDew-X9a7PNVw/exec'; // ЗАМЕНИТЕ ЭТО НА ВАШУ ССЫЛКУ ИЗ GOOGLE APPS SCRIPT
+        const form = document.getElementById('joinForm');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (form) {
+            form.addEventListener('submit', e => {
+                e.preventDefault();
+                
+                // Меняем текст кнопки во время отправки
+                const originalBtnText = submitBtn.innerHTML;
+                submitBtn.innerHTML = 'Отправка...';
+                submitBtn.disabled = true;
+                
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => {
+                        alert('Ваша заявка успешно отправлена! Мы свяжемся с вами.');
+                        form.reset();
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    })
+                    .catch(error => {
+                        console.error('Error!', error.message);
+                        alert('Произошла ошибка при отправке. Пожалуйста, напишите нам в WhatsApp.');
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    });
+            });
+        }
     </script>
 </body>
 
